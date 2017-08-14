@@ -1,0 +1,1 @@
+This is a project for a simple, personal CMS. It is my first open-source project in PHP.
