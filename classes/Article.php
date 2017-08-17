@@ -128,12 +128,13 @@ class Article
   */
 
   public function insert() {
-
+	
     // Does the Article object already have an ID?
     if ( !is_null( $this->id ) ) trigger_error ( "Article::insert(): Attempt to insert an Article object that already has its ID field set (to $this->id).", E_USER_ERROR );
 
     // Insert the Article
     $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+	
     $sql = "INSERT INTO articles ( publicationDate, title, outline, content ) VALUES ( FROM_UNIXTIME(:publicationDate), :title, :outline, :content )";
     $stmt = $conn->prepare ( $sql );
     $stmt->bindValue( ":publicationDate", $this->publicationDate, PDO::PARAM_INT );

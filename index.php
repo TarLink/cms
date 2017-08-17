@@ -16,10 +16,10 @@ switch ( $operation ) {
 
 function archive() {
   $data = array();
-  $data = Article::getList();
+  $data = Article::getArticlesList();
   $data['articles'] = $data['results'];
   $data['totalRows'] = $data['totalRows'];
-  $data['pageTitle'] = "Article Archive | Widget News";
+  $data['pageTitle'] = "Article Archive";
   require( TEMPLATE_PATH . "/archive.php" );
 }
 
@@ -31,16 +31,16 @@ function viewArticle() {
 
   $data = array();
   $data['article'] = Article::getById( (int)$_GET["articleId"] );
-  $data['pageTitle'] = $data['article']->title . " | Widget News";
+  $data['pageTitle'] = $data['article']->title;
   require( TEMPLATE_PATH . "/viewArticle.php" );
 }
 
 function homepage() {
   $data = array();
-  $data = Article::getList( HOMEPAGE_NUM_ARTICLES );
+  $data = Article::getArticlesList( HOMEPAGE_NUM_ARTICLES );
   $data['articles'] = $data['results'];
   $data['totalRows'] = $data['totalRows'];
-  $data['pageTitle'] = "Widget News";
+  $data['pageTitle'] = "Personal CMS";
   require( TEMPLATE_PATH . "/homepage.php" );
 }
 

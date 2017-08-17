@@ -1,7 +1,6 @@
 /* Style the body and outer container */
 
 body {
-  margin: 0;
   color: #333;
   background-color: #e7717d;
   font-family: Calibri, Helvetica, Arial, sans-serif;
@@ -12,8 +11,7 @@ body {
 	color: #5496cf;
 }
 
-#container {
-  width: 950px;
+.container{
   background: #fff;
   margin: 20px auto;
   padding: 20px;
@@ -21,9 +19,6 @@ body {
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
-
-
-
 
 #footer {
   border-top: 1px solid #e7717d;
@@ -52,172 +47,121 @@ h2 a {
 
 /* Article headlines */
 
-#headlines {
-  list-style: none;
-  padding-left: 0;
-  width: 75%;
+.headlines {
+  color: #7e685a;
 }
 
-#headlines li {
-  margin-bottom: 2em;
+@media (min-width: 768px){
+	.headlines .col-sm-2 h2 {
+		text-align: center;
+	}
 }
 
-.pubDate {
-  font-size: .8em;
+.headlines  a:hover{
+	text-decoration:none;
+	color: inherit;
+}
+
+.headlines .col-sm-2 h2{
+	font-size: 1.5em;
+	margin-top: 1.5em;
+}
+
+.pub-date {
+  margin-top: 20px;
+  font-size: 0.8em;
   color: #afd274;
   text-transform: uppercase;
 }
 
-#headlines .pubDate {
+/*
+#headlines .pub-date {
   display: inline-block;
   width: 100px;
   font-size: .5em;
   vertical-align: middle;
 }
 
-#headlines.archive .pubDate {
+#headlines.archive .pub-date {
   width: 130px;
+}*/
+
+@media (min-width: 768px){ 
+	.view-article {
+		width: 75%;
+    }
 }
 
-.summary {
-  padding-left: 100px;
-}
-
-#headlines.archive .summary {
-  padding-left: 130px;
-}
-
-
-/* "You are logged in..." header on admin pages */
-
-#adminHeader {
-  width: 940px;
-  padding: 0 10px;
-  -bottom: 1px solid #e7717d;
-  margin: -30px 0 40px 0;
-  font-size: 0.8em;
+#outline {
+	font-style: italic;
+	margin-bottom: 10px;
 }
 
 
 /* Style the form  */
 
-form {
-  margin: 20px auto;
-  padding: 40px 20px;
-  overflow: auto;
-  background: #e5e1df;
-  border: 1px solid #666;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;  
-  border-radius: 5px;
-  -moz-box-shadow: 0 0 .2em rgba(0, 0, 0, .8);
-  -webkit-box-shadow: 0 0 .2em rgba(0, 0, 0, .8);
-  box-shadow: 0 0 .2em rgba(0, 0, 0, .8);
+
+.panel {
+		
+	  margin: 20px auto;
+	  padding: 40px 20px;
+	  overflow: auto;
+	  background: #e5e1df;
+	  border: none;
+	  -moz-border-radius: 5px;
+	  -webkit-border-radius: 5px;  
+	  border-radius: 5px;
+	  -moz-box-shadow: 0 0 .2em rgba(0,0,0,0.8);
+	  -webkit-box-shadow: 0 0 .2em rgba(0,0,0,0.8);
+	  box-shadow: 0 0 .3em rgba(0,0,0,0.8);
+	}
+	
+@media (min-width:768px){
+	.panel{
+		width:50%;
+	}
 }
 
+.edit-article{
+	width: 100%;	
+}
 
 /* Style the form elements with margin, padding and line height */
 
-form ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-form ul li {
-  margin: .9em 0 0 0;
-  padding: 0;
-}
-
-form * {
-  line-height: 1em;
-}
-
-
-/* The field labels */
-
-label {
-  display: block;
-  float: left;
-  clear: left;
-  text-align: right;
-  width: 15%;
-  padding: .4em 0 0 0;
-  margin: .15em .5em 0 0;
-}
-
 
 /* The fields */
-
-input, select, textarea {
-  display: block;
-  margin: 0;
-  padding: .4em;
-  width: 80%;
+@media (min-width:768px){
+	input.form-control, textarea.form-control, select.form-control{
+	  width: 80%;
+	}
 }
 
-input, textarea, .date {
-  border: 2px solid #666;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;    
-  border-radius: 5px;
-  background: #fff;
+.panel input.form-control, .panel textarea.form-control, .panel select.form-control{
+  box-shadow: 0 0 .3em rgba(0,0,0,0.8); 
+  border: none;
 }
 
-input {
-  font-size: .9em;
-}
-
-select {
-  padding: 0;
-  margin-bottom: 2.5em;
-  position: relative;
-  top: .7em;
-}
-
-textarea {
-  font-family:Calibri, Helvetica, Arial, sans-serif;
-  font-size: .9em;
-  height: 5em;
-  line-height: 1.5em;
-}
-
-textarea#content {
-  font-family: "Courier New", courier, fixed;
-}
-  
-
-/* Place a border around focused fields */
-
-form *:focus {
-  border: 2px solid #68a600;
+.panel input.form-control:focus, .panel textarea.form-control:focus, .panel select.form-control{
+	border: 1px solid #68a600;
   outline: none;
 }
 
-
-/* Display correctly filled-in fields with a green background */
-
-input:valid, textarea:valid {
-  background: #edffcd;
+label.input-label {
+	color:#7b6a5a;
 }
 
-
-/* Submit buttons */
-
-.buttons {
-  text-align: center;
-  margin: 40px 0 0 0;
+@media (min-width:768px){
+	label.right-align{
+		text-align: right;
+	}
 }
 
-input[type="submit"] {
-  display: inline;
-  margin: 0 20px;
-  width: 12em;
-  padding: 10px;
-  border: 2px solid #68a600;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;  
-  border-radius: 5px;
+.top-buffer{
+	margin-top:40px;
+}
+
+button[type="submit"] {
+  
   -moz-box-shadow: 0 0 .2em rgba(0, 0, 0, .8);
   -webkit-box-shadow: 0 0 .2em rgba(0, 0, 0, .8);
   box-shadow: 0 0 .2em rgba(0, 0, 0, .8);
@@ -227,14 +171,15 @@ input[type="submit"] {
   -webkit-appearance: none;
 }
 
-input[type="submit"]:hover, input[type="submit"]:active {
+button[type="submit"]:hover, input[type="submit"]:active {
   cursor: pointer;
   background: #fff;
   color: #507f00;
 }
 
-input[type="submit"]:active {
+button[type="submit"].btn:focus, button[type="submit"].btn:active {
   background: #eee;
+  outline:none;
   -moz-box-shadow: 0 0 .2em rgba(0, 0, 0, .8) inset;
   -webkit-box-shadow: 0 0 .2em rgba(0, 0, 0, .8) inset;
   box-shadow: 0 0 .2em rgba(0, 0, 0, .8) inset;
@@ -243,66 +188,24 @@ input[type="submit"]:active {
 
 /* Tables */
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-tr, th, td {
-  padding: 10px;
-  margin: 0;
-  text-align: left;
-}
-
-table, th {
-  border: 1px solid #c2b9b0;
-}
-
 th {
-  border-left: none;
-  border-right: none;
+  
   background: #afd274;
   color: #fff;
   cursor: default;
 }
 
-tr:nth-child(odd) {
-  background: #e5e1df;
+.table-striped tr:nth-child(odd) td{
+  background: #f9f9f9;
 }
 
-tr:nth-child(even) {
+.table-striped tr:nth-child(even) td {
   background: #fff;
 }
 
-tr:hover {
-  background: #ccc;
+.table-hover tbody tr:hover td{
+  background-color: #f3f3f3;
   cursor: pointer;
-}
+} 
 
-
-/* Status and error boxes */
-
-.statusMessage, .errorMessage {
-  font-size: 1em;
-  padding: .5em;
-  margin: 2em 0;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px; 
-  -moz-box-shadow: 0 0 .2em rgba(0, 0, 0, .8);
-  -webkit-box-shadow: 0 0 .2em rgba(0, 0, 0, .8);
-  -box-shadow: 0 0 .2em rgba(0, 0, 0, .8);
-}
-
-.statusMessage {
-  background-color: #afd274;
-  border: 1px solid #89b047;
-  color: #fff;
-}
-
-.errorMessage {
-  background-color: #f22;
-  border: 1px solid #800;
-  color: #fff;
-}
 

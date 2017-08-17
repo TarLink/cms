@@ -8,15 +8,15 @@
       <h1>All Articles</h1>
 
 <?php if ( isset( $data['errorMessage'] ) ) { ?>
-        <div class="error_message"><?php echo $data['errorMessage'] ?></div>
+		<div class="alert alert-warning"><?php echo $data['errorMessage'] ?></div>
 <?php } ?>
 
 
 <?php if ( isset( $data['statusMessage'] ) ) { ?>
-        <div class="statusMessage"><?php echo $data['statusMessage'] ?></div>
+        <div class="alert alert-info"><?php echo $data['statusMessage'] ?></div>
 <?php } ?>
 
-      <table>
+    <table class="table table-bordered table-striped table-hover">
         <tr>
           <th>Publication Date</th>
           <th>Article</th>
@@ -33,7 +33,7 @@
 
 <?php } ?>
 
-      </table>
+    </table>
 
       <p><?php echo $data['totalRows']?> article<?php echo ( $data['totalRows'] != 1 ) ? 's' : '' ?> in total.</p>
 

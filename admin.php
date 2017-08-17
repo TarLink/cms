@@ -34,7 +34,7 @@ switch ( $operation ) {
 function login() {
 
   $data = array();
-  $data['pageTitle'] = "Admin Login | Widget News";
+  $data['pageTitle'] = "Admin Login";
 
   if ( isset( $_POST['login'] ) ) {
 
