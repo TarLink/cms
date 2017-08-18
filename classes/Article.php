@@ -9,7 +9,7 @@ class Article
   // Properties
 
   /**
-  * @var int The article ID from the infobase
+  * @var int The article ID from the database
   */
   public $id = null;
 
