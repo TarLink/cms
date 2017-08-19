@@ -53,25 +53,51 @@ function login() {
 
   if ( isset( $_POST['login'] ) ) {
 
-    // User has posted the login form: attempt to log the user in
+		// User has posted the login form: attempt to log the user in
+		
+		//captcha verify that is not a robot
+		
+		$result = file_get_contents( 'https://www.google.com/recaptcha/api/siteverify', false, stream_context_create( array(
+			'http' => array(
+				'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+				'method'  => 'POST',
+				'content' => http_build_query( array(
+					'response' => $_POST['g-recaptcha-response'],
+					'secret' => SECRET_CAPTCHA_KEY
+				) ),
+			),
+		) ) );
+		$result = json_decode($result);
+		
 
-    if ( $_POST['username'] == ADMIN_USERNAME && $_POST['password'] == ADMIN_PASSWORD ) {
+		if ( $_POST['username'] == ADMIN_USERNAME && $_POST['password'] == ADMIN_PASSWORD && $result->success) {
+			
+			
 
-      // Login successful: Create a session and redirect to the admin homepage
-      $_SESSION['username'] = ADMIN_USERNAME;
-      header( "Location: admin.php" );
+			  // Login successful: Create a session and redirect to the admin homepage
+			  $_SESSION['username'] = ADMIN_USERNAME;
+			  header( "Location: admin.php" );
 
-    } else {
+			} else  {
 
-      // Login failed: display an error message to the user
-      $data['errorMessage'] = "Incorrect username or password. Please try again.";
-      require( TEMPLATE_PATH . "/admin/loginForm.php" );
-    }
+			  // Login failed: display an error message to the user
+			  $data['errorMessage'] = "Incorrect username or password. Please try again.";
+			  
+			  //flag for loading of invisible captcha scripts
+			  $attempt_login = true;
+			
+			  require( TEMPLATE_PATH . "/admin/loginForm.php" );
+		}
 
   } else {
+	  
+		// User has not posted the login form yet
+		
+		//flag for loading of invisible captcha scripts
+		$attempt_login = true;
 
-    // User has not posted the login form yet: display the form
-    require( TEMPLATE_PATH . "/admin/loginForm.php" );
+		// display the form
+		require( TEMPLATE_PATH . "/admin/loginForm.php" );
   }
 
 }

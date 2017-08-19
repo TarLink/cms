@@ -1,7 +1,7 @@
 <?php include "templates/include/header.php" ?>
 	<div class="panel panel-default form">
 	<div class="panel-body">
-      <form class="form-horizontal"  action="admin.php?operation=login" method="post" >
+      <form class="form-horizontal" id="login-form" action="admin.php?operation=login" method="post" >
 		
 			<input  type="hidden" name="login" value="true" />
 			
@@ -28,7 +28,10 @@
 		</div>
 				
 			
-          <button type="submit" name="login" class="btn btn-default" >Login</button>
+          <button type="submit" name="login" class="btn btn-default g-recaptcha" 
+				data-sitekey="6LeOWi0UAAAAAGpbY3wPDEqd-j7SD7fEPbiRp7Wb"
+				data-callback="onSubmit"
+		  >Login</button>
        
 		
       </form>
