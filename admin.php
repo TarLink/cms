@@ -69,26 +69,53 @@ function login() {
 		) ) );
 		$result = json_decode($result);
 		
+		if ($result->success) {
+			$logged_in_flag = false; // somehow a more complex code flow
+			if (isset($_POST['username']) && isset($_POST['password'])) {
+				
+				try {
+					$pdo = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD);
+					$pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false); //for security purposes
+					$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //enables error output
+					
+					$stmt=$pdo->prepare("SELECT password FROM members WHERE username = :username LIMIT 1");
+					$stmt->bindValue(":username",$_POST['username']);
+					$stmt->execute();
+					$hash_pwd = $stmt->fetchColumn();
+				} catch(PDOException $e){
+					error_log("Database error: " . $e->getMessage());
+					die("Database error");
+				} catch (Exception $e ){
+					error_log("General error: " . $e->getMessage());
+					die("General error");
+				}
+				if (isset($hash_pwd) && password_verify($_POST['password'],$hash_pwd)){
+					$logged_in_flag = true;
+					 
+				}
 
-		if ( $_POST['username'] == ADMIN_USERNAME && $_POST['password'] == ADMIN_PASSWORD && $result->success) {
+			} 
 			
+			//Here it is decided if loggin successfull
 			
+			if ($logged_in_flag == true ){
+				// Login successful: Create a session and redirect to the admin homepage
+					  $_SESSION['username'] = $_POST['username'];
+					  header( "Location: admin.php" );
+			}
+			else  {
 
-			  // Login successful: Create a session and redirect to the admin homepage
-			  $_SESSION['username'] = ADMIN_USERNAME;
-			  header( "Location: admin.php" );
-
-			} else  {
-
-			  // Login failed: display an error message to the user
-			  $data['errorMessage'] = "Incorrect username or password. Please try again.";
-			  
-			  //flag for loading of invisible captcha scripts
-			  $attempt_login = true;
-			
-			  require( TEMPLATE_PATH . "/admin/loginForm.php" );
+				  // Login failed: display an error message to the user
+				  $data['errorMessage'] = "Incorrect username or password. Please try again.";
+				  
+				  //flag for loading of invisible captcha scripts
+				  $attempt_login = true;
+				
+				  require( TEMPLATE_PATH . "/admin/loginForm.php" );
+			}
+		} else {
+			header("Location: index.php");	// you are an evil robot	
 		}
-
   } else {
 	  
 		// User has not posted the login form yet

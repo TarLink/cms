@@ -9,3 +9,13 @@ CREATE TABLE articles
 
   PRIMARY KEY     (id)
 );
+
+DROP TABLE IF EXISTS members;
+CREATE TABLE members
+(
+  id              smallint unsigned NOT NULL auto_increment,
+  username        varchar(30) NOT NULL,                 
+  email           varchar(50) NOT NULL,                     
+  password        varchar(255) NOT NULL, 					  #the php hash length may change over time (see manual)                      
+  PRIMARY KEY     (id)
+)ENGINE = InnoDB;
