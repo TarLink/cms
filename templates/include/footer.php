@@ -1,10 +1,7 @@
       <div id="footer">
-         Published in 2017.<?php
-			if(isset($data['pageTitle']) && $data['pageTitle'] == "Admin Login"){
-				?><a href="./">Return to Homepage</a><?php
-			}else{?>
+         Published in 2017 by Alexandru Bucur<?php
+			if(!empty($_SESSION['username'])){ ?>
 				<a href="admin.php">Site Admin</a>
-				
 			<?php } ?>
       </div>
 

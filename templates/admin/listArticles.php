@@ -1,10 +1,5 @@
 <?php include "templates/include/header.php" ?>
 
-      <div id="admin_header">
-        <h2>Header Admin</h2>
-        <p>You are logged in as <b><?php echo htmlspecialchars( $_SESSION['username']) ?></b>. <a href="admin.php?operation=logout"?>Log out</a></p>
-      </div>
-
       <h1>All Articles</h1>
 
 <?php if ( isset( $data['errorMessage'] ) ) { ?>

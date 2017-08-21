@@ -20,6 +20,27 @@ body {
   border-radius: 5px;
 }
 
+.navbar-default {
+	background-color:#c2b9b0;
+
+}
+
+/*horizontal lines for collapsed menu in small screeens*/
+
+hr.hr-menu{
+	margin:0;
+}
+
+hr.hr-menu-last{
+	display:none;
+}
+
+@media (min-width:768px){
+hr.hr-menu{
+		display:none;
+}
+}
+
 #footer {
   border-top: 1px solid #e7717d;
   margin-top: 40px;
@@ -70,6 +91,7 @@ h2 a {
 .pub-date {
   margin-top: 20px;
   font-size: 0.8em;
+  font-weight:bold;
   color: #afd274;
   text-transform: uppercase;
 }

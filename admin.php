@@ -96,7 +96,7 @@ function login() {
 
 			} 
 			
-			//Here it is decided if loggin successfull
+			//Here it is decided if loggin was successfull
 			
 			if ($logged_in_flag == true ){
 				// Login successful: Create a session and redirect to the admin homepage
