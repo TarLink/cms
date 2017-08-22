@@ -34,7 +34,7 @@
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
 						<li><a href="./">Home</a></li><hr class="hr-menu" />
-						<li><a href="#">About</a></li><hr class="hr-menu <?php if ($data['pageTitle'] == "Admin Login"){?> hr-menu-last <?php } //do not display last hr if page is login form ?>" hr />
+						<li><a href="index.php?operation=about">About</a></li><hr class="hr-menu <?php if ($data['pageTitle'] == "Admin Login"){?> hr-menu-last <?php } //do not display last hr if page is login form ?>" hr />
 					</ul>
 					<?php if( empty($_SESSION['username']) && $data['pageTitle'] != "Admin Login"){//display only if not logged in or the login form not displayed?>
 						<ul class="nav navbar-nav navbar-right">

@@ -26,6 +26,9 @@ switch ( $operation ) {
   case 'viewArticle':
     viewArticle();
     break;
+  case 'about':
+	about();
+	break;
   default:
     homepage();
 }
@@ -49,6 +52,11 @@ function viewArticle() {
   $data['article'] = Article::getById( (int)$_GET["articleId"] );
   $data['pageTitle'] = $data['article']->title;
   require( TEMPLATE_PATH . "/viewArticle.php" );
+}
+
+function about(){
+	$data['pageTitle'] = "About";
+	require( TEMPLATE_PATH . "/about.php" );
 }
 
 function homepage() {

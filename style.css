@@ -231,3 +231,16 @@ th {
 } 
 
 
+/*about me page */
+img#personal-picture {
+	padding-right:20px;
+	padding-bottom: 10px;
+}
+
+#about-me-nav-tabs{
+	border-bottom:none;
+}
+
+#about-me-tab-content{
+	padding-top:10px;
+}
