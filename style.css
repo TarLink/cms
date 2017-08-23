@@ -20,9 +20,21 @@ body {
   border-radius: 5px;
 }
 
+
 .navbar-default {
 	background-color:#c2b9b0;
 
+}
+
+#admin-link{
+	color:#777;
+}
+
+#admin-link:hover{
+	text-decoration:none;
+	color:#333;
+	background-color:transparent;
+	outline:0;
 }
 
 /*horizontal lines for collapsed menu in small screeens*/
@@ -148,15 +160,9 @@ h2 a {
 	width: 100%;	
 }
 
-/* Style the form elements with margin, padding and line height */
+/* Style the form elements */
 
 
-/* The fields */
-@media (min-width:768px){
-	input.form-control, textarea.form-control, select.form-control{
-	  width: 80%;
-	}
-}
 
 .panel input.form-control, .panel textarea.form-control, .panel select.form-control{
   box-shadow: 0 0 .3em rgba(0,0,0,0.8); 

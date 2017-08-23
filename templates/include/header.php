@@ -16,6 +16,19 @@
 		   }
 		 </script>
 	<?php }
+		if(!empty($_SESSION['username'])){?>
+				<script src='https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=5jje6s044e3b2on5vg9l0n2gpmb3qslt8ujqs2bnz4580itb'></script>
+				<script>
+					tinymce.init({
+						selector:'#content',
+						setup: function (editor) {
+							editor.on('change', function (e) {
+								editor.save();
+							});
+						}
+					});
+				</script>
+		<?php }
 	?>
 	<link rel="stylesheet" type="text/css" href="style.css" />
   </head>
@@ -45,7 +58,7 @@
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="admin.php?operation=logout"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li><hr class="hr-menu" />
 						</ul>
-						<p class="navbar-text navbar-right">You are logged in as <b><?php echo htmlspecialchars( $_SESSION['username']) ?></b></p>
+						<p class="navbar-text navbar-right"><a href="admin.php" id="admin-link">You are logged in as <b><?php echo htmlspecialchars( $_SESSION['username']) ?></b></a></p>
 					<?php } ?>
 				</div>
 			</div>

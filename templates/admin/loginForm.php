@@ -12,7 +12,7 @@
 		
 		<div class="form-group">
 	
-			<label class="input-label col-sm-3 col-md-2" for="username">Username</label>
+			<label class="input-label col-sm-3 col-md-2" id="label-username" for="username">Username</label>
 			<div class="col-sm-9 col-md-10">
 				<input type="text"  name="username" class="form-control " id="username" placeholder="Your admin username" required autofocus maxlength="20" />
 			</div>
