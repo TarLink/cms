@@ -11,7 +11,7 @@ class SecureSessionHandler extends SessionHandler {
         $this->cookie = $cookie;
 
         $this->cookie += [
-            'lifetime' => 0,
+            'lifetime' => 1800,//30 minutes
             'path'     => ini_get('session.cookie_path'),
             'domain'   => ini_get('session.cookie_domain'),
             'secure'   => isset($_SERVER['HTTPS']),

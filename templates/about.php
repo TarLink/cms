@@ -12,7 +12,7 @@
 			<p>I said earlier that interest in programming diminished, but it never disappeared. I still remember the satisfaction of creating the first web crawler in PHP, my first website for an NGO, or using the YouTube API to find the most viewed videos before it was officially possible. I want this passion for technology to have a bigger role in my life. I like its dynamic side, the continual challenge that forces you to be the best, the daily adventure and determination that makes you feel like you are fully alive.</p>
 			<p>That's why I started this project, a CMS built from scratch in php. It's my first open-source project. I use the Bootstrap platform for responsive design and a number of data security features. If you are interested, you can take a look at my <a href="https://github.com/TarLink/cms" target="_blank">GitHub</a> acoount. To achieve this, I used the PHP language, JavaScript, Jquery, SQL, CSS, HTML, and Linux. As you can see, it is not yet completed. In the near future, I want to add features such as page management and the ability to upload images.</p>
 			<p>If you need to build your own website, or help with any online technology problem, do not hesitate to contact me at <a href="mailto:contact@albucur.com">contact@albucur.com</a>. You can find out more about me on <a href="https://twitter.com/alexandrubucur" target="_blank">Twitter</a>. </p>
-			<p>I'm available, don’t hesitate to contact me!</p>
+			<p>I'm available, I would be glad to help you!</p>
 
 		</div>
 		<div id="ro" class="tab-pane  fade">

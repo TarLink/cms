@@ -4,3 +4,6 @@ Key features added so far:
 
 -responsive design
 -protection from DDoS, SQL injection, Rainbow Tables
+-integration of PhotoShow gallery https://github.com/thibaud-rohmer/PhotoShow
+and TinyMCE text editor
+-use of javascript, e.g. MutationObservers to make TinyMCE Image plugin talk to PhotoShow

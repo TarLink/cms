@@ -51,6 +51,15 @@
 			</div>
 
 		  </form>
+		  <?php if (isset($_POST['image_name'])){ ?>
+		  <div id="populate_form_values" style="display:none">
+			<input type="hidden" name="image_name" value=<?php echo $_POST['image_name']; ?>>
+			<input type="hidden" name="image_width" value=<?php echo $_POST['image_width']; ?>>
+			<input type="hidden" name="image_height" value=<?php echo $_POST['image_height']; ?>>
+			<input type="hidden" name="cursor_position" value=<?php echo $_POST['cursor_position']; ?>>
+			
+		  </div><?php
+		  }?>
 		</div>
 		</div>
 <?php if ( $data['article']->id ) { ?>

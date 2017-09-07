@@ -56,7 +56,7 @@ function viewArticle() {
 
 function about(){
 	$data['pageTitle'] = "About";
-	require( TEMPLATE_PATH . "/about.php" );
+	require( TEMPLATE_PATH . "/about.php" );	
 }
 
 function homepage() {

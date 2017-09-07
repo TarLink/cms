@@ -133,7 +133,7 @@ function login() {
 function logout() {
   global $session;
   unset( $_SESSION['username'] );
-  $session->destroy( session_id() );
+  $session->forget();
   header( "Location: admin.php" );
 }
 
